@@ -15,9 +15,97 @@
     <title>Weather Dashboard</title>
   </head>
   <body>
-    <header></header>
+    <header>
+      <div class="jumbotron">
+        <h1 class="display-4 text-center">Weather Dashboard</h1>
+      </div>
+    </header>
 
-    <main class="row"></main>
+    <main class="row m-3">
+      <!--Search Button-->
+      <section class="justify-content-around">
+        <div class="">
+          <h2>Search for a City:</h2>
+          <input id="enterCity" type="text" placeholder="Enter City..." />
+          <button id="citySearch">Search</button>
+        </div>
+        <!--Search History-->
+        <div class="col-12" id="cityHistoryBox">
+          <ul id="cityHistory"></ul>
+        </div>
+      </section>
+      <!--Today's Weather-->
+      <section>
+        <div class="">
+          <h3>Today's Weather</h3>
+          <ul id="currentWeather">
+            <li id="cityname"></li>
+            <li id="todayDate"></li>
+            <li id="todayTemp">Temp:</li>
+            <li id="todayWind">Wind:</li>
+            <li id="todayHumidity">Humidity:</li>
+            <li id="todayUV">UV Index:</li>
+          </ul>
+        </div>
+      </section>
+
+      <!--Forecast Container-->
+      <section class="row col-12 justify-content-around" id="5dayForecast">
+        <h3>5-Day Forecast</h3>
+        <!--Day1-->
+        <div class="grid-container">
+          <div class="grid-item">
+            <ul id="1" class="card text-light">
+              <li id="day1"></li>
+              <li><img /></li>
+              <li id="temperature1">Temp:</li>
+              <li id="wind1">Wind:</li>
+              <li id="humidity1">Humidity:</li>
+            </ul>
+          </div>
+          <!--Day2-->
+          <div class="grid-item">
+            <ul id="2" class="card text-light">
+              <li id="day2"></li>
+              <li><img /></li>
+              <li id="temperature2">Temp:</li>
+              <li id="wind2">Wind:</li>
+              <li id="humidity2">Humidity:</li>
+            </ul>
+          </div>
+          <!--Day3-->
+          <div class="grid-item">
+            <ul id="3" class="card text-light">
+              <li id="day3"></li>
+              <li><img /></li>
+              <li id="temperature3">Temp:</li>
+              <li id="wind3">Wind:</li>
+              <li id="humidity3">Humidity:</li>
+            </ul>
+          </div>
+          <!--Day4-->
+          <div class="grid-item">
+            <ul id="4" class="card text-light">
+              <li id="day4"></li>
+              <li><img /></li>
+              <li id="temperature4">Temp:</li>
+              <li id="wind4">Wind:</li>
+              <li id="humidity4">Humidity:</li>
+            </ul>
+          </div>
+          <!--Day5-->
+          <div class="grid-item">
+            <ul id="5" class="card text-light">
+              <li id="day5"></li>
+              <li><img /></li>
+              <li id="temperature5">Temp:</li>
+              <li id="wind5">Wind:</li>
+              <li id="humidity5">Humidity:</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
 
     <!--JQuery-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
