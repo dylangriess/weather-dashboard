@@ -5,7 +5,22 @@
 .jumbotron h1 {
   background: linear-gradient(0.25turn, #4e4bff, #06034a);
   color: white;
-  font-size: 3rem;
+  font-size: 4rem;
+}
+
+.todayWeather {
+  min-height: 275px;
+  width: 500px;
+  font-size: 1.25rem;
+  border: 3px solid black;
+  padding: 5px;
+  margin: 10px 0px 10px 0px;
+}
+
+#cityName {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #4e4bff;
 }
 
 ul#currentWeather {
@@ -16,6 +31,8 @@ ul#currentWeather {
   background-color: rgb(64, 64, 113);
   list-style: none;
   text-align: left;
+  min-height: 200px;
+  padding: 10px;
 }
 
 .grid-container {
@@ -31,4 +48,14 @@ ul#currentWeather {
   padding: 0px;
   font-size: 20px;
   text-align: left;
+}
+
+.favorable {
+  background-color: green;
+}
+.moderate {
+  background-color: yellow;
+}
+.severe {
+  background-color: red;
 }
