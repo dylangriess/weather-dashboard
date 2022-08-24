@@ -23,26 +23,36 @@ var date1 = $("#date1");
 var temp1 = $("#temperature1");
 var wind1 = $("#wind1");
 var humidity1 = $("#humidity1");
+var day1Icon;
+var day1IconImage = $("#icon1");
 
 var date2 = $("#date2");
 var temp2 = $("#temperature2");
 var wind2 = $("#wind2");
 var humidity2 = $("#humidity2");
+var day2Icon;
+var day2IconImage = $("#icon2");
 
 var date3 = $("#date3");
 var temp3 = $("#temperature3");
 var wind3 = $("#wind3");
 var humidity3 = $("#humidity3");
+var day3Icon;
+var day3IconImage = $("#icon3");
 
 var date4 = $("#date4");
 var temp4 = $("#temperature4");
 var wind4 = $("#wind4");
 var humidity4 = $("#humidity4");
+var day4Icon;
+var day4IconImage = $("#icon4");
 
 var date5 = $("#date5");
 var temp5 = $("#temperature5");
 var wind5 = $("#wind5");
 var humidity5 = $("#humidity5");
+var day5Icon;
+var day5IconImage = $("#icon5");
 
 //Function to get current weather
 function getWeather() {
@@ -92,26 +102,51 @@ function getWeather() {
     .then(function (data) {
       console.log(data);
       date1.text("Date: " + data.data[1].datetime);
+      day1Icon = data.data[1].weather.icon;
+      day1IconImage.attr(
+        "src",
+        `https://www.weatherbit.io/static/img/icons/${day1Icon}.png`
+      );
       temp1.text("Temp: " + data.data[1].temp + " ºF");
       wind1.text("Wind: " + data.data[1].wind_spd + " MPH");
       humidity1.text("Humidity: " + data.data[1].rh + " %");
 
       date2.text("Date: " + data.data[2].datetime);
+      day2Icon = data.data[2].weather.icon;
+      day2IconImage.attr(
+        "src",
+        `https://www.weatherbit.io/static/img/icons/${day2Icon}.png`
+      );
       temp2.text("Temp: " + data.data[2].temp + " ºF");
       wind2.text("Wind: " + data.data[2].wind_spd + " MPH");
       humidity2.text("Humidity: " + data.data[2].rh + " %");
 
       date3.text("Date: " + data.data[3].datetime);
+      day3Icon = data.data[3].weather.icon;
+      day3IconImage.attr(
+        "src",
+        `https://www.weatherbit.io/static/img/icons/${day3Icon}.png`
+      );
       temp3.text("Temp: " + data.data[3].temp + " ºF");
       wind3.text("Wind: " + data.data[3].wind_spd + " MPH");
       humidity3.text("Humidity: " + data.data[3].rh + " %");
 
       date4.text("Date: " + data.data[4].datetime);
+      day4Icon = data.data[4].weather.icon;
+      day4IconImage.attr(
+        "src",
+        `https://www.weatherbit.io/static/img/icons/${day4Icon}.png`
+      );
       temp4.text("Temp: " + data.data[4].temp + " ºF");
       wind4.text("Wind: " + data.data[4].wind_spd + " MPH");
       humidity4.text("Humidity: " + data.data[4].rh + " %");
 
       date5.text("Date: " + data.data[5].datetime);
+      day5Icon = data.data[5].weather.icon;
+      day5IconImage.attr(
+        "src",
+        `https://www.weatherbit.io/static/img/icons/${day5Icon}.png`
+      );
       temp5.text("Temp: " + data.data[5].temp + " ºF");
       wind5.text("Wind: " + data.data[5].wind_spd + " MPH");
       humidity5.text("Humidity: " + data.data[5].rh + " %");
