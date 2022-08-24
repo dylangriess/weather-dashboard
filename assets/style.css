@@ -28,7 +28,7 @@ ul#currentWeather {
 }
 
 .card {
-  background-color: rgb(64, 64, 113);
+  background-color: #4e4bff;
   list-style: none;
   text-align: left;
   min-height: 200px;

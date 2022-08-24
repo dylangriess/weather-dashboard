@@ -1,5 +1,3 @@
-console.log("hello, world");
-
 //Variable declarations
 var apiKey = "afd3be8e24e844a682d13ba28363015a";
 var searchBtn = $("#citySearchBtn");
@@ -61,13 +59,13 @@ function getWeather() {
     searchCity +
     "&units=imperial&key=" +
     apiKey;
-  console.log(requestUrl);
+  // console.log(requestUrl);
   fetch(requestUrl)
     .then(function (response) {
       return response.json();
     })
     .then(function (data) {
-      console.log(data);
+      // console.log(data);
       cityName.text(data.data[0].city_name);
       todayDate.text(data.data[0].datetime);
       todayIcon = data.data[0].weather.icon;
@@ -94,13 +92,13 @@ function getWeather() {
     searchCity +
     "&units=imperial&key=" +
     apiKey;
-  console.log(forecastUrl);
+  // console.log(forecastUrl);
   fetch(forecastUrl)
     .then(function (response) {
       return response.json();
     })
     .then(function (data) {
-      console.log(data);
+      // console.log(data);
       date1.text("Date: " + data.data[1].datetime);
       day1Icon = data.data[1].weather.icon;
       day1IconImage.attr(
@@ -163,15 +161,17 @@ function citySearch(event) {
 }
 
 var savedCities = [];
-// if (localStorage.getItem.forEach("savedCities")) {
-//   savedCities = localStorage.getItem("savedCities");
-//   console.log("Saved cities:" + savedCities);
-// } else {
-//   savedCities = [];
-// }
+if (localStorage.getItem("savedCities")) {
+  handleSavedCities();
+  // console.log("Saved cities:" + savedCities);
+} else {
+  savedCities = [];
+}
 
 function handleSavedCities() {
-  // var savedCities = JSON.parse(localStorage.getItem("savedCities"));
+  savedCities = JSON.parse(localStorage.getItem("savedCities"));
+  // console.log(currentSavedCities);
+  cityHistory.empty();
   savedCities.forEach((city) => {
     var li = document.createElement("li");
     li.appendChild(document.createTextNode(city));
@@ -180,14 +180,14 @@ function handleSavedCities() {
 }
 
 //Add event handler for save input
-searchBtn.on("click", function () {
-  console.log(cityInput.val());
+searchBtn.on("click", function (event) {
+  // console.log(cityInput.val());
   searchCity = cityInput.val();
-  // savedCities.push(searchCity);
-  // localStorage.setItem("savedCities", JSON.stringify(savedCities));
-  console.log(searchCity);
-  citySearch();
+  savedCities.push(searchCity);
+  localStorage.setItem("savedCities", JSON.stringify(savedCities));
+  // console.log(savedCities);
+  citySearch(event);
+  handleSavedCities();
 });
 
 getWeather();
-handleSavedCities();
