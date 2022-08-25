@@ -59,3 +59,17 @@ ul#currentWeather {
 .severe {
   background-color: red;
 }
+
+#cityHistory {
+  list-style-type: none;
+}
+
+#cityHistory button {
+  background-color: #4e4bff;
+  color: white;
+  min-width: 200px;
+  height: 50px;
+  border-radius: 15px;
+  border: 2px solid black;
+  margin: 3px;
+}
