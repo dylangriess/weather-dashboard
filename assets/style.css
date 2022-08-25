@@ -9,7 +9,7 @@
 }
 
 .todayWeather {
-  min-height: 275px;
+  min-height: 250px;
   width: 500px;
   font-size: 1.25rem;
   border: 3px solid black;
@@ -72,4 +72,13 @@ ul#currentWeather {
   border-radius: 15px;
   border: 2px solid black;
   margin: 3px;
+}
+
+#icon1,
+#icon2,
+#icon3,
+#icon4,
+#icon5 {
+  height: 75px;
+  width: auto;
 }

@@ -86,7 +86,7 @@ function getWeather() {
         todayUV.addClass("favorable");
       }
     });
-
+  //get forecast data for 5-day forecast
   var forecastUrl =
     "https://api.weatherbit.io/v2.0/forecast/daily&days=[5]?city=" +
     searchCity +
@@ -151,6 +151,7 @@ function getWeather() {
     });
 }
 
+//alerts user if no city placed in search box while search button clicked
 function citySearch(event) {
   if (!searchCity) {
     alert("Please enter valid city.");
@@ -160,6 +161,7 @@ function citySearch(event) {
   }
 }
 
+//places saved cities in array in localStorage
 var savedCities = [];
 if (localStorage.getItem("savedCities")) {
   handleSavedCities();
@@ -168,6 +170,7 @@ if (localStorage.getItem("savedCities")) {
   savedCities = [];
 }
 
+//search history buttons presented, with event handler
 function handleSavedCities() {
   savedCities = JSON.parse(localStorage.getItem("savedCities"));
   // console.log(currentSavedCities);
@@ -201,6 +204,7 @@ searchBtn.on("click", function (event) {
   handleSavedCities();
 });
 
+//able to run getweather () when history buttons clicked
 function runHistory(event) {
   event.preventDefault();
   element = event.target;
